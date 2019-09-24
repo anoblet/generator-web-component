@@ -41,6 +41,10 @@ module.exports = class extends Generator {
 
   async writing() {
     this.fs.copyTpl(
+      this.templatePath(".gitignore"),
+      this.destinationPath(".gitignore")
+    );
+    this.fs.copyTpl(
       this.templatePath("rollup.config.js"),
       this.destinationPath("rollup.config.js"),
       { className: this.answers.className, tag: this.answers.tag }
